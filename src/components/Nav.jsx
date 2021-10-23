@@ -24,10 +24,19 @@ const Nav = () => (
           Note App
         </a>
       </Link>
-
       <Link href="/notes">
         <a sx={{ color: "text", fontSize: 3, cursor: "pointer" }}>notes</a>
       </Link>
+      <a
+        sx={{
+          color: "text",
+          fontSize: 3,
+          cursor: "pointer",
+        }}
+        href={process.env.HELP_APP_URL}
+      >
+        Help me
+      </a>
     </nav>
   </header>
 );
