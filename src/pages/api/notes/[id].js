@@ -1,12 +1,10 @@
 import nc from "next-connect";
-import notes from "../../../src/data/data";
-
+import notes from "../../../data/data";
 const getNote = (id) => notes.find((n) => n.id === parseInt(id));
 
 const handler = nc()
   .get((req, res) => {
     const note = getNote(req.query.id);
-
     if (!note) {
       res.status(404);
       res.end();
@@ -44,3 +42,5 @@ const handler = nc()
 
     res.json({ data: req.query.id });
   });
+
+export default handler;
