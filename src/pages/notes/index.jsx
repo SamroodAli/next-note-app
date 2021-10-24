@@ -32,7 +32,6 @@ const Index = ({ notes }) => {
 export const getServerSideProps = async () => {
   const res = await fetch(`${process.env.API_URL}/api/notes`);
   const { data } = await res.json();
-
   return {
     props: { notes: data },
   };
