@@ -19,7 +19,9 @@ export async function getServerSideProps({ params, req, res }) {
   if (!response.ok) {
     res.writeHead(302, { Location: "/notes" });
     res.end();
-    return { props: {} };
+    return {
+      props: {},
+    };
   }
 
   const { data } = await response.json();
